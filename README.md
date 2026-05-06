@@ -198,7 +198,7 @@ CUDA-enabled GPU (recommended for deep learning)
 ### Install Dependencies
 
 ```bash
-git clone https://github.com/your-username/purchase-prediction-eeg.git
+git clone https://github.com/Tanishgupta28/Deep-Learning_NeuMa
 cd purchase-prediction-eeg
 pip install -r requirements.txt
 ```
