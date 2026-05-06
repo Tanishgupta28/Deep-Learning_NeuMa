@@ -8,7 +8,7 @@
 
 <br/><br/>
 
-# 🧠 User Purchase Prediction
+#  User Purchase Prediction
 ### Using EEG, Eye-Tracking Signals & Numerical Data Analysis
 
 *A Deep Learning + Machine Learning project at the intersection of Neuroscience and AI*
@@ -20,7 +20,7 @@
 
 </div>
 
-## 👥 Team
+##  Team
 
 | Name | Roll No. |
 |------|----------|
@@ -33,20 +33,20 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 Traditional purchase prediction models rely on clickstream data and demographic profiles — they record the *what* but miss the *why*. This project bridges that gap by tapping directly into consumers' **neurological and physiological responses** during product evaluation.
 
 We solve a **binary classification problem**: *Will a user purchase a product?* — using two independent yet complementary pipelines:
 
-1. **🔬 Deep Learning Pipeline** — Bidirectional GRU with Attention mechanism on raw EEG + Eye-Tracking signals
-2. **📊 Machine Learning Pipeline** — XGBoost, CatBoost, and AdaBoost on structured tabular/numerical features
+1. **Deep Learning Pipeline** — Bidirectional GRU with Attention mechanism on raw EEG + Eye-Tracking signals
+2. **Machine Learning Pipeline** — XGBoost, CatBoost, and AdaBoost on structured tabular/numerical features
 
 > **Dataset:** [NeuMa Neuromarketing Dataset](https://doi.org/10.3389/fncom.2024.1516440) (Georgiadis et al., 2023) — 42 participants browsing FMCG supermarket brochures with simultaneous EEG and eye-tracking recording.
 
 ---
 
-## 🏆 Key Results
+##  Key Results
 
 <div align="center">
 
@@ -71,42 +71,42 @@ We solve a **binary classification problem**: *Will a user purchase a product?* 
 
 </div>
 
-> 📌 The BiGRU + Attention model achieves the **highest accuracy among all DL baselines** tested (outperforming LSTM, Vanilla GRU, CNN+LSTM, EEGNet, Transformer Encoder). The lower F1 reflects inherent class imbalance in physiological datasets, addressed using weighted BCE loss.
+>  The BiGRU + Attention model achieves the **highest accuracy among all DL baselines** tested (outperforming LSTM, Vanilla GRU, CNN+LSTM, EEGNet, Transformer Encoder). The lower F1 reflects inherent class imbalance in physiological datasets, addressed using weighted BCE loss.
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
-📦 purchase-prediction-eeg
-├── 📁 deep_learning/
+ purchase-prediction-eeg
+├──  deep_learning/
 │   ├── bigru_attention_model.py     # BiGRU + Attention architecture
 │   ├── data_loader.py               # EEG + ET data loading & preprocessing
 │   ├── train.py                     # Training loop with early stopping
 │   └── evaluate.py                  # Threshold optimization & metrics
 │
-├── 📁 machine_learning/
+├──  machine_learning/
 │   ├── preprocess_numerical.py      # Tabular data preprocessing & SMOTE
 │   ├── xgboost_model.py             # XGBoost with regularization
 │   ├── catboost_model.py            # CatBoost classifier
 │   ├── adaboost_model.py            # AdaBoost baseline
 │   └── evaluate_ml.py               # Cross-validation & metrics
 │
-├── 📁 visualizations/
+├──  visualizations/
 │   ├── loss_curves.py               # Training vs. Validation loss plots
 │   ├── confusion_matrices.py        # Confusion matrix plots
 │   ├── roc_curves.py                # ROC-AUC curves
 │   ├── feature_importance.py        # SHAP / gain feature plots
 │   └── smote_visualization.py       # PCA-projected SMOTE plots
 │
-├── 📁 data/                         # NeuMa dataset (.mat files) — not included
+├──  data/                         # NeuMa dataset (.mat files) — not included
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## 🧩 Methodology
+##  Methodology
 
 ### Part 1 — Deep Learning: BiGRU with Attention
 
@@ -126,11 +126,11 @@ Architecture:
 ```
 
 **Key Design Choices:**
-- 🔁 **Bidirectional GRU** — captures both temporal lead-up and aftermath of a fixation event
-- 🎯 **Attention Mechanism** — focuses on critical fixation moments tied to purchase intent
-- ⚖️ **BCEWithLogitsLoss + pos_weight** — directly counteracts ~6:1 class imbalance
-- 🛑 **Early Stopping** (patience=10) + Gradient Clipping (max norm=1.0)
-- 🔀 **Subject-Disjoint Splits** — no participant appears in both train and test sets
+-  **Bidirectional GRU** — captures both temporal lead-up and aftermath of a fixation event
+-  **Attention Mechanism** — focuses on critical fixation moments tied to purchase intent
+-  **BCEWithLogitsLoss + pos_weight** — directly counteracts ~6:1 class imbalance
+-  **Early Stopping** (patience=10) + Gradient Clipping (max norm=1.0)
+-  **Subject-Disjoint Splits** — no participant appears in both train and test sets
 
 ---
 
@@ -153,7 +153,7 @@ Architecture:
 
 ---
 
-## 📊 Full Model Comparison
+##  Full Model Comparison
 
 ### Deep Learning Baselines (EEG/Physiological Stream)
 
@@ -186,7 +186,7 @@ Architecture:
 
 ---
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 
@@ -220,7 +220,7 @@ seaborn>=0.12.0
 
 ---
 
-## 🚀 Usage
+##  Usage
 
 ### Deep Learning Pipeline
 
@@ -264,7 +264,7 @@ python visualizations/smote_visualization.py
 
 ---
 
-## 📐 Hyperparameters
+##  Hyperparameters
 
 | Parameter | BiGRU (Deep Learning) | XGBoost / CatBoost |
 |-----------|----------------------|-------------------|
@@ -280,14 +280,14 @@ python visualizations/smote_visualization.py
 
 ---
 
-## 🔑 Key Features of This Work
+##  Key Features of This Work
 
-- **🧠 Neuromarketing meets AI** — bypass self-reported surveys; use raw neural signals
-- **🔀 Multimodal fusion** — EEG (temporal brain signals) + Eye Tracking (visual attention) as a unified 25-channel input
-- **🎯 Temporal attention** — model learns *which moments* during product fixation are most predictive
-- **👥 Subject-disjoint evaluation** — ensures cross-subject generalization, not subject memorization
-- **⚖️ Class imbalance handling** — weighted BCE loss (DL) + SMOTE (ML)
-- **📊 Dual-stream comparison** — first systematic comparison of DL (physiological) vs ML (tabular) on NeuMa dataset
+- **Neuromarketing meets AI** — bypass self-reported surveys; use raw neural signals
+- **Multimodal fusion** — EEG (temporal brain signals) + Eye Tracking (visual attention) as a unified 25-channel input
+- **Temporal attention** — model learns *which moments* during product fixation are most predictive
+- **Subject-disjoint evaluation** — ensures cross-subject generalization, not subject memorization
+- **Class imbalance handling** — weighted BCE loss (DL) + SMOTE (ML)
+- **Dual-stream comparison** — first systematic comparison of DL (physiological) vs ML (tabular) on NeuMa dataset
 
 ---
 
@@ -307,7 +307,7 @@ python visualizations/smote_visualization.py
 
 ---
 
-## 📚 References
+## References
 
 1. Usman et al., *"Multimodal consumer choice prediction using EEG signals and eye tracking"*, Frontiers in Computational Neuroscience, 2025.
 2. Afshar & Azimi, *"EEG-Based Consumer Behaviour Prediction: Classical ML to GNNs"*, arXiv, 2025.
@@ -324,7 +324,6 @@ python visualizations/smote_visualization.py
 
 <div align="center">
 
-**Made with 🧠 + ❤️ at Thapar Institute of Engineering and Technology**
 
 *Department of Computer Science & Engineering, Patiala, Punjab, India*
 
