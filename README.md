@@ -245,7 +245,7 @@ seaborn>=0.12.0
 
 ---
 
-## 📉 Limitations & Future Work
+## Limitations & Future Work
 
 **Current Limitations:**
 - Small dataset (42 participants) limits population-level generalization
