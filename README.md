@@ -218,52 +218,6 @@ matplotlib>=3.7.0
 seaborn>=0.12.0
 ```
 
----
-
-##  Usage
-
-### Deep Learning Pipeline
-
-```python
-# 1. Preprocess EEG + Eye Tracking data
-python deep_learning/data_loader.py --data_dir ./data/NeuMa/
-
-# 2. Train BiGRU + Attention model
-python deep_learning/train.py \
-    --epochs 50 \
-    --batch_size 64 \
-    --lr 0.0005 \
-    --hidden_size 32 \
-    --dropout 0.4 \
-    --patience 10
-
-# 3. Evaluate with threshold optimization
-python deep_learning/evaluate.py --threshold_search 0.30 0.75
-```
-
-### Machine Learning Pipeline
-
-```python
-# 1. Preprocess numerical data + apply SMOTE
-python machine_learning/preprocess_numerical.py
-
-# 2. Train and evaluate all models
-python machine_learning/xgboost_model.py
-python machine_learning/catboost_model.py
-python machine_learning/adaboost_model.py
-```
-
-### Generate Visualizations
-
-```python
-python visualizations/loss_curves.py
-python visualizations/roc_curves.py
-python visualizations/feature_importance.py
-python visualizations/smote_visualization.py
-```
-
----
-
 ##  Hyperparameters
 
 | Parameter | BiGRU (Deep Learning) | XGBoost / CatBoost |
@@ -299,11 +253,11 @@ python visualizations/smote_visualization.py
 - Real-time EEG acquisition has high hardware cost for practical deployment
 
 **Future Directions:**
-- 🔗 **Multimodal end-to-end fusion** — combine EEG, Eye Tracking, and numerical features in one unified model
-- 🤖 **Transformer for EEG** — multi-head self-attention for global temporal context
-- 🔓 **Self-supervised pre-training** on unlabeled EEG to improve minority-class representation
-- 👤 **Personalized fine-tuning** — subject-adaptive models to handle inter-individual neural variability
-- 📦 **Larger datasets** — more participants + product categories for better generalization
+- **Multimodal end-to-end fusion** — combine EEG, Eye Tracking, and numerical features in one unified model
+- **Transformer for EEG** — multi-head self-attention for global temporal context
+- **Self-supervised pre-training** on unlabeled EEG to improve minority-class representation
+- **Personalized fine-tuning** — subject-adaptive models to handle inter-individual neural variability
+- **Larger datasets** — more participants + product categories for better generalization
 
 ---
 
