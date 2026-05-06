@@ -14,7 +14,7 @@
 *A Deep Learning + Machine Learning project at the intersection of Neuroscience and AI*
 
 **Thapar Institute of Engineering and Technology, Patiala**  
-*BE Third Year — Computer Science & Engineering | May 2026*
+*BE Third Year - Computer Science & Engineering | May 2026*
 
 ---
 
